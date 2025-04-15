@@ -56,6 +56,27 @@ public class Main {
                     }
                     break;
                 case 3:
+                    System.out.print("Id: ");
+                    id = sc.nextInt();
+                    sc.nextLine();
+
+                    for(Tarefa tarefa : tarefas) {
+                        if(tarefa.getId() == id) {
+                            System.out.printf("Título atual: %s%n", tarefa.getTitulo());
+                            System.out.print("Novo título: ");
+                            titulo = sc.nextLine();
+                            tarefa.setTitulo(titulo);
+
+                            System.out.printf("Descrição atual: %s%n", tarefa.getDescricao());
+                            System.out.print("Nova descrição: ");
+                            descricao = sc.nextLine();
+                            tarefa.setDescricao(titulo);
+
+                            System.out.println("Lista de tarefas atualizada!");
+                        } else {
+                            System.out.println("ID não encontrado!");
+                        }
+                    }
                     break;
                 case 4:
                     System.out.print("Id: ");
