@@ -58,6 +58,11 @@ public class Main {
                 case 3:
                     break;
                 case 4:
+                    System.out.print("Id: ");
+                    id = sc.nextInt();
+
+                    tarefas.removeIf(tarefa -> tarefa.getId() == id);
+                    System.out.println("Lista de tarefas atualizada!");
                     break;
                 case 5:
                     System.out.println("Finalizando...");
