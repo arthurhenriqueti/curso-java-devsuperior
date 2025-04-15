@@ -3,6 +3,8 @@ package entidades;
 import enums.StatusTarefa;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Tarefa {
     private Integer id;
@@ -11,6 +13,8 @@ public class Tarefa {
     private LocalDate dataCriacao;
     private LocalDate dataLimite;
     private StatusTarefa status;
+
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Tarefa(Integer id, String titulo, String descricao, LocalDate dataCriacao, LocalDate dataLimite, StatusTarefa status) {
         this.id = id;
@@ -69,7 +73,13 @@ public class Tarefa {
         this.status = status;
     }
 
+    @Override
     public String toString() {
-        return "";
+        return "Id: " + id +
+                " | Título: '" + titulo + '\'' +
+                " | Descrição: '" + descricao + '\'' +
+                " | Data de criação: " + dataCriacao.format(fmt) +
+                " | Data limite: " + dataLimite.format(fmt) +
+                " | Status: " + status;
     }
 }
